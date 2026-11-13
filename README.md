@@ -46,8 +46,8 @@ Progress is saved to `localStorage` (autosave on mission completion, every 20 s 
   blending (grass, moss, sand, dirt path, wooden deck, water with foam), 8-frame water shimmer, swaying trees,
   grass, flowers and reeds, outlined characters with 6-frame walk cycles in 4 directions, idle, and net / camera /
   lens / jar tool animations, 7 NPC scientists with idle animation and 8 portrait expressions each (mouth moves
-  while talking), 25 wildlife species with multi-frame animation (deer, fox and kits, otter, heron, frog, robin,
-  butterflies, bee, dragonfly, ladybird, crab, hatchling, fish...), custom 5x7 pixel font, particles and toasts.
+  while talking), 20+ animated animals (deer, fox and kits, otter, heron, frog, robin, blue tit, butterflies, bee, dragonfly,
+  ladybird, crab, hatchling, fish, bird silhouettes...) feeding a 25-entry species journal, custom 5x7 pixel font, particles and toasts.
 * **Wildlife AI**: butterflies and dragonflies flit and flee when you run; robins hop and fly off; frogs jump; herons
   take off; crabs burrow; fish scatter; the deer and otter spook if you run or get too close (sneak to photograph them).
 * **Missions** (11, chained into a story): talk, read, net, scan, jar, photograph, track, bird-hide quiz mini-game,
@@ -90,8 +90,8 @@ to override; `BIOGAME_SKIP_BROWSER=1` skips that stage explicitly and says so).
 
 `tools/test_autoplay.mjs` runs a bot through the real simulation at 30 Hz. The "human" profile walks (never runs),
 reads dialogue at 16 characters/s plus 0.4 s per line, thinks 6 s per quiz question and answers one in three quizzes
-wrong first. Result: about 14 minutes (13:50-15:30 across seeds; a fast reader who runs everywhere needs about 9;
-a slow reader about 20). Real players will vary with how they explore and how well they aim the net.
+wrong first. Result: about 14 minutes (13:58 for the baseline, 13:58-14:59 across 9 seeds; a fast reader who runs everywhere needs
+about 9; a slow reader about 20). Real players will vary with how they explore and how well they aim the net.
 
 ## Screenshots
 
