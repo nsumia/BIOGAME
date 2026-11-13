@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Lanternfen Field Notes</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; background: #1a1423; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; background: #1a1423; display: block; }
+  #touch { display: none; position: fixed; inset: 0; pointer-events: none; font: bold 14px monospace; }
+  #touch button { pointer-events: auto; position: absolute; width: 56px; height: 56px; border-radius: 28px; border: 3px solid #1a1423; background: rgba(246,242,231,.55); color: #1a1423; font: bold 16px monospace; touch-action: none; }
+  #touch .dp { left: 10px; bottom: 10px; width: 180px; height: 180px; position: absolute; }
+  #touch .dp button { border-radius: 12px; }
+  #touch [data-k=up] { left: 62px; top: 0; } #touch [data-k=down] { left: 62px; bottom: 0; } #touch [data-k=left] { left: 0; top: 62px; } #touch [data-k=right] { right: 0; top: 62px; }
+  #touch [data-k=act] { right: 14px; bottom: 70px; width: 72px; height: 72px; border-radius: 36px; background: rgba(248,214,76,.7); }
+  #touch [data-k=run] { right: 96px; bottom: 14px; width: 52px; height: 52px; }
+  #touch [data-k=journal] { right: 14px; bottom: 150px; width: 44px; height: 44px; font-size: 12px; }
+  #touch [data-k=pause] { right: 14px; top: 10px; width: 40px; height: 40px; font-size: 12px; }
+  noscript { color: #f6f2e7; font: 16px monospace; }
+</style>
+</head>
+<body>
+<canvas id="game" width="480" height="270"></canvas>
+<div id="touch">
+  <div class="dp"><button data-k="up">^</button><button data-k="down">v</button><button data-k="left">&lt;</button><button data-k="right">&gt;</button></div>
+  <button data-k="act">E</button><button data-k="run">RUN</button><button data-k="journal">J</button><button data-k="pause">II</button>
+</div>
+<noscript>This game needs JavaScript.</noscript>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8"><title>BIOGAME art sheet</title>
+<style>body{background:#2e2b45;color:#eee;font:12px monospace;margin:8px}canvas{image-rendering:pixelated;margin:2px;background:#5da64d}h3{margin:6px 0 0}</style>
+<div id="o"></div>
+<script type="module">
+import { SPR } from './src/sprites.js';
+import { gridToCanvas } from './src/gfx.js';
+import { buildMap } from './src/map.js';
+const o = document.getElementById('o'); const sc = +(new URLSearchParams(location.search).get('s') || 3);
+const filter = new URLSearchParams(location.search).get('f') || '';
+const groups = {};
+for (const [k, s] of Object.entries(SPR)) { if (filter && !filter.split(',').some(p => k.startsWith(p))) continue; const g = k.split('_')[0]; (groups[g] ||= []).push([k, s]); }
+for (const [g, list] of Object.entries(groups)) {
+  const h = document.createElement('h3'); h.textContent = g; o.append(h);
+  for (const [k, s] of list) for (const f of s.frames) { const c = document.createElement('canvas'); c.width = f.w; c.height = f.h; c.getContext('2d').drawImage(gridToCanvas(f), 0, 0); c.style.width = f.w * sc + 'px'; c.title = k; o.append(c); }
+}
+window.ready = true;
+</script>
